@@ -37,7 +37,9 @@ function Titulo(props) {
 export default function PaginaInicial() {
   // const username = 'jorgelisboa';
   //STATE
+  var valor;
   const [username, setUsername] = React.useState("jorgelisboa");
+  const defaultImage = 'https://img1.pnghut.com/1/2/3/tPtDGUThWn/human-michelangelo-david-head-statue.jpg'
   const rout = useRouter();
   console.log(rout);
   return (
@@ -92,7 +94,16 @@ export default function PaginaInicial() {
               marginBottom: "32px",
             }}
           >
-            <Titulo tag="h2">Seja bem vindo!</Titulo>
+            <Titulo tag="h2">Welcome to RetrowaveIt</Titulo>
+            {/* <Text
+              variant="body4"
+              styleSheet={{
+                marginVertical: "8px",
+                color: appConfig.theme.colors.neutrals[300],
+              }}
+            >
+              {appConfig.name}
+            </Text> */}
             <Text
               variant="body3"
               styleSheet={{
@@ -100,7 +111,7 @@ export default function PaginaInicial() {
                 color: appConfig.theme.colors.neutrals[300],
               }}
             >
-              {appConfig.name}
+              Insert your github account to enjoy.
             </Text>
 
             {/* <input 
@@ -118,7 +129,7 @@ export default function PaginaInicial() {
               onChange={function (event) {
                 console.log({ username } + " digitou", event.target.value);
                 //Cadê o valor?
-                const valor = event.target.value;
+                valor = event.target.value;
                 //Trocar o valor da variable através do react
                 setUsername(valor);
               }}
@@ -167,7 +178,8 @@ export default function PaginaInicial() {
                 borderRadius: "50%",
                 marginBottom: "16px",
               }}
-              src={`https://github.com/${username}.png`}
+              
+              src={`https://github.com/${username}.png`} //||
             />
             <Text
               variant="body4"

@@ -39,9 +39,8 @@ export default function PaginaInicial() {
   //STATE
   var valor;
   const [username, setUsername] = React.useState("jorgelisboa");
-  const defaultImage = 'https://img1.pnghut.com/1/2/3/tPtDGUThWn/human-michelangelo-david-head-statue.jpg'
   const rout = useRouter();
-  console.log(rout);
+  
   return (
     <>
       <Box
@@ -82,7 +81,7 @@ export default function PaginaInicial() {
               infoEvent.preventDefault();
               // window.location.href = '/chat'; Dá reload da página
               //Atualizar para o chatPage
-              rout.push("/chat");
+              rout.push(`/chat?username=${username}`);
             }}
             styleSheet={{
               display: "flex",
